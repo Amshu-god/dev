@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(36, 31, 41);
+    color: aliceblue;
+    height: 100%;
+    width: 100%;
+}
+.navigation{
+    background-color: rgb(131, 51, 236);
+    height: 8vh;
+    display: flex;
+    align-items: center;
+   width: 100%;
+    font-size: large
+
+}
+.navigation nav h1{
+    margin: 4vh;
+}
+.subs{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.right-element{
+    background-color:  rgb(131, 51, 236);
+    margin: 8vh 4vh;
+padding: 4vh;
+width: 40vw;
+height: fit-content;
+}
+.left-element{
+   
+    margin: 4vh 1vh;
+    padding: 4vh;
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    width: 40vw;
+}
+
+.tear1{
+    display: flex;
+   margin-bottom: 4vh; 
+   background-color: rgb(131, 51, 236);
+   padding: 4vh;
+}
+.price{
+    padding: 4vh;
+
+}
+ .button {
+    margin-top: 4vh;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5900ff; /* Button color */
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .button:hover {
+    background-color: #6200b3; /* Darker shade on hover */
+  }
+  .gradient-border {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px; /* Optional: Rounded corners */
+    background-color: white; /* Background color inside the border */
+    z-index: 1;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(to right, red, blue);
+    border-radius: 12px; /* Ensure this matches or is slightly larger than the .gradient-border */
+    z-index: -1;
+  }
+  .gradient-border2 {
+    position: relative;
+   
+    border-radius: 10px; /* Optional: Rounded corners */
+    background-color: white; /* Background color inside the border */
+    z-index: 1;
+  }
+  
+  .gradient-border2::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(to right, blue, red);
+    
+    z-index: -1;
+  }
+  
+
+@media (max-width: 960px) {
+    /* Styles for screens smaller than or equal to 768px wide */
+    .right-element{
+        width: auto;
+    }
+.left-element{
+    width: auto;
+}
+.tear1{
+   flex-wrap: wrap;
+}
+  }
