@@ -123,6 +123,11 @@ height: fit-content;
   }
 
 /* for welcome */
+.big-boy{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
 .container {
     position: relative;
 }
