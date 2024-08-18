@@ -108,7 +108,7 @@ height: fit-content;
     z-index: -1;
   }
   
-
+/* responsive */
 @media (max-width: 960px) {
     /* Styles for screens smaller than or equal to 768px wide */
     .right-element{
@@ -121,3 +121,26 @@ height: fit-content;
    flex-wrap: wrap;
 }
   }
+
+/* for welcome */
+.container {
+    position: relative;
+}
+
+.text {
+    font-size: 3rem;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
