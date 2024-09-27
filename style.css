@@ -39,5 +39,6 @@ main{
     margin: 0;
 }
 .site p {
+    margin:10px;
     clear: both;
 }
