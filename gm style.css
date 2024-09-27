@@ -1,0 +1,69 @@
+.navigation{
+    background-color: rgb(233, 151, 0);
+width: 100vw;
+}
+
+.search-input{
+    color: aliceblue;
+}
+.footer{
+    
+    width: 80vw;
+    height: 10vh;
+}
+.pro-img{
+  width: 24vw;
+   height: 216px;
+  
+    overflow: hidden;      /* Hide overflow to prevent the image from spilling out */
+    position: relative;    /* Relative positioning to allow absolute positioning of the image */
+  
+}
+.pro-img2{
+    margin: 4vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+width: 20vw;
+   
+}
+.element{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-evenly; /* Space between nav items and search */
+    padding: 10px 20px;
+    position: relative;
+    padding-bottom: 10px; /* Space at the bottom to accommodate the border */
+   
+}
+.element::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Border height */
+    background-color: #a8840e; /* Border color */
+    transition: width 0.5s ease-in-out; /* Smooth transition for animation */
+}
+.element:hover::after{
+    width: 100%; /* Expand the border width on hover */
+}
+.details{
+    flex-grow: 4;
+    padding: 0;
+   
+}
+.heading{
+    color: #ecc062;
+    margin-top: 4vh;
+    padding: 0px 15px;
+}
+.heading h2 a{
+    text-decoration: none;
+    color: inherit;
+}
+.links44{
+    display: flex;
+    justify-content: space-evenly;
+}

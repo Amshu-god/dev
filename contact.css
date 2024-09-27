@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.hero-section {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+ 
+    text-align: center;
+}
+
+.contact-item {
+    max-width: 300px;
+}
+
+.contact-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.contact-form-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-form-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input,#message{
+    color: aliceblue;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
