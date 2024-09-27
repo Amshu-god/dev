@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+         .gradient-border2 {
+    position: relative;
+   
+    border-radius: 10px; /* Optional: Rounded corners */
+    background-color: white; /* Background color inside the border */
+    z-index: 1;
+  }
+  
+  .gradient-border2::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(to right, blue, red);
+    
+    z-index: -1;
+  }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 350px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+         
+            text-align: center;
+        }
+
+        .login-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+           
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 96%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            font-size: 14px;
+            
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #5900ff;
+            border: none;
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #6200b3;
+        }
+
+        .login-container p {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+           
+        }
+
+        .login-container p a {
+            color: #ff0000;
+            text-decoration: none;
+        }
+
+        .login-container p a:hover {
+            text-decoration: underline;
+        }
+        .gradient-border {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px; /* Optional: Rounded corners */
+    background-color: white; /* Background color inside the border */
+    z-index: 1;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(to right, red, blue);
+    border-radius: 12px; /* Ensure this matches or is slightly larger than the .gradient-border */
+    z-index: -1;
+  }
+    </style>
+</head>
+<body class="gradient-border2">
+    <div class="login-container gradient-border">
+        <h2>Login</h2>
+        <form action="" method="dialog">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <input type="submit" onclick="validateForm()" id="loginForm"  value="Login">
+        </form>
+        <p id="error-message"></p>
+        <p>Don't have an account? <a href="join.html">Sign up</a></p>
+    </div>
+    <script src="myjs.js"></script>
+</body>
+</html>
