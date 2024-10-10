@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #241601;
+    color: #f5e0f0;
+}
+#form{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    background-color: rgb(172, 104, 1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+h1{
+    text-align: center;
+}
+.parent{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.score{
+    border: 8px solid rgb(105, 68, 23);
+    box-shadow: inset;
+    width: 400px; 
+    padding: 0;
+    margin: 0; 
+}
+
+.ru{
+    margin-top: 0;
+    text-align: center;
+    font-size: 60px;
+    margin: 12px;
+}
+.info{
+    display: flex;
+    flex-wrap: wrap;
+}
+#overs,#RunRate,#reqRr,#target{
+    margin: 12px;
+    text-align: right;
+}
+.current{
+    border: 8px solid rgb(105, 68, 23);
+    width: 600px;
+    height: 300px;
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: right;
+    padding: 10px;
+}
+#lastBall{
+    text-align: center;
+    font-size: 80px;
+}
+#currentOver{
+    float: right;
+    text-align: right;
+    font-size: 50px;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+}
+button{
+    background-color: #ffae00; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+}
