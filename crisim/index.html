@@ -24,18 +24,32 @@
             <input type="text" id="advantage" name="awayTeam"><br><br> -->
             
            
-            
-            <label>Select Batting Team:</label><br>
-            <input type="radio" id="home" name="team" value="Home" required>
-            <label for="home">Home</label><br>
-            
-            <input type="radio" id="away" name="team" value="Away" required>
-            <label for="away">Away</label><br><br>
-            
-            <button type="submit">Submit</button>
-        </form>
+            <div class="flex">
+<div class="teamselect">
+
+    <label>Select Batting Team:</label><br>
+    <input type="radio" id="home" name="team" value="Home" required>
+    <label for="home">Home</label><br>
+    
+    <input type="radio" id="away" name="team" value="Away" required>
+    <label for="away">Away</label><br><br>
+</div>
+<div class="advselect">
+
+    
+    <label>Advantage Team:</label><br>
+    <input type="radio" id="homeadv" name="teamadv" value="Home" required>
+    <label for="home">Home</label><br>
+    
+    <input type="radio" id="awayadv" name="teamadv" value="Away" required>
+    <label for="away">Away</label><br><br>
+</div>
+                
+            </div>
+                <button type="submit">Submit</button>
+            </form>
         
-    </div>
+        </div>
     <div id="simulator">
 
         
@@ -62,6 +76,7 @@
                         <h2><span>CRR: </span><span id="RunRate">0.0</span></h2>
                         <h2><span>OV:</span><span id="overs">0.0</span></h2>
                         <h2><span>pre: </span><span id="prediction">00/0</span></h2>
+                        
                         <h2><span>RRR: </span><span id="reqRr">---</span></h2>
                         <h2><span>Target: </span><span id="target">---</span></h2>
                     </div>
@@ -70,7 +85,7 @@
                 <div class="current">
                     
                     <h2><span id="lastBall">No run yet</span></h2>
-                    <h2><span id="currentOver">--</span><span style="font-size: 40px;">This over: </span></h2>
+                    <h2><span id="currentOver">--</span><span class="amover" >This over: </span></h2>
                     <h2 id="elevated"><span id="stas"><span id="battingsecond"></span> needs </span><span id="remtar">69</span><span id=" runs in"> runs  in </span><span id="rembal">42</span><span> balls!</span></h2>
                 </div>
             </div>

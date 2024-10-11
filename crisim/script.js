@@ -12,6 +12,7 @@ document.getElementById('matchForm').addEventListener('submit', function(event) 
     // advantage = advantage.value
     //advantage = Number(advantage)
     const selectedTeam = document.querySelector('input[name="team"]:checked').value;
+    const AdvantageTeam = document.querySelector('input[name="teamadv"]:checked').value;
     if(selectedTeam==="Home"){
         batfirst=homeTeam
         batsecond = awayTeam
@@ -19,6 +20,14 @@ document.getElementById('matchForm').addEventListener('submit', function(event) 
     else{
         batfirst = awayTeam
         batsecond = homeTeam
+    }
+    if(AdvantageTeam=="Home"){
+        goodteam=homeTeam
+        badteam = awayTeam
+    }
+    else{
+        goodteam=awayTeam
+        badteam = homeTeam
     }
 
     document.getElementById("form").style.display = "none";
@@ -174,7 +183,7 @@ function lets() {
     ovpw = 5
     console.log(ov)
 //ing=2
-    if(random>200){
+    if(random>200 && batfirst == goodteam){
         parking =  (random - 200) % 5
         switch(parking){
             case 0 :
@@ -213,6 +222,52 @@ function lets() {
                             case 4 :
                                 addBall()
                                 if (ing == 1){
+
+                                    addRun(4)
+                                }
+                                break;
+                            }
+    }
+
+    else if(random>200 && batfirst !== goodteam){
+        parking =  (random - 200) % 5
+        switch(parking){
+            case 0 :
+               if(ing!==1){
+                addBall()
+                addRun(6)
+               }
+               else{
+                addBall()
+                if(random % 10 == 0 ){
+                    addWicket()
+                }
+               }
+                break;
+                case 1:
+                    addBall()
+                    if(ing !== 1){
+
+                        addRun(1)
+                    }
+                    break;
+                    case 2:
+                        addBall()
+                        if(ing!==1){
+
+                            addRun(2)
+                        }
+                        break;
+                        case 3 :
+                            addBall()
+                            if (ing!==1){
+
+                                addRun(2)
+                            }
+                            break;
+                            case 4 :
+                                addBall()
+                                if (ing !== 1){
 
                                     addRun(4)
                                 }
