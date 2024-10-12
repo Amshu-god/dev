@@ -4,8 +4,11 @@ document.getElementById('matchForm').addEventListener('submit', function(event) 
     let homeTeam =  document.getElementById('homeTeam').value; 
     let awayTeam = document.getElementById('awayTeam').value; 
     let awayTeam2 = document.getElementById('awayTeam2').value; 
+    let tva = document.getElementById('tov').value; 
     console.log(awayTeam2)
     adv = 201 + Number(awayTeam2)
+    tov = tva
+    tovv = tov
     homeTeam = capitalizeFirstLetter(homeTeam)
     awayTeam = capitalizeFirstLetter(awayTeam)
     // let advantage = document.getElementById('advantage').value; // Convert to number
@@ -51,11 +54,11 @@ function capitalizeFirstLetter(str) {
 
 let atkmode = false
 let panikmode = false
-let target = 6478997429871987
+let target = 1600
 let totalScore = 0;
 let totalWickets = 0;
 let totalBalls = 0;
-let tov = 50;
+
 let currentOver = [];  // To store the runs and wickets of the current over
 
 function addRun(runs) {
@@ -64,18 +67,22 @@ function addRun(runs) {
 
     if (runs===0){
         document.getElementById('lastBall').textContent = `Dot ball`;
+        document.getElementById('lastBall').style.color="#f5ede0"
 
     }
     else if(runs===4){
         document.getElementById('lastBall').textContent = `FOUR!`;
+        document.getElementById('lastBall').style.color="purple"
 
     }
     else if(runs===6){
         document.getElementById('lastBall').textContent = `SIX!!`;
+        document.getElementById('lastBall').style.color="purple"
 
     }
     else{
        document.getElementById('lastBall').textContent = `${runs} run(s) scored`;
+       document.getElementById('lastBall').style.color="#f5ede0"
 
 }
 currentOver.push(runs);  // Add run to current over
@@ -87,7 +94,7 @@ function addExtras(runs) {
     totalScore += runs;
     document.getElementById('totalScore').textContent = totalScore;
     document.getElementById('lastBall').textContent = `${runs} run(s) scored`;
-    
+    document.getElementById('lastBall').style.color="green"
     currentOver.push( runs+'wi');  // Add run to current over
    
     updateCurrentOverDisplay();
@@ -97,7 +104,7 @@ function addExtrasNb(runs) {
     totalScore += runs;
     document.getElementById('totalScore').textContent = totalScore;
     document.getElementById('lastBall').textContent = `${runs} run(s) scored`;
-    
+    document.getElementById('lastBall').style.color="green"
     currentOver.push( runs+'NB');  // Add run to current over
     
     updateCurrentOverDisplay();
@@ -108,7 +115,7 @@ function addWicket() {
         totalWickets++;
         document.getElementById('wickets').textContent = totalWickets;
         document.getElementById('lastBall').textContent = `Wicket!!`;
-
+document.getElementById('lastBall').style.color="red"
         currentOver.push('W');  // Add wicket to current over
        
         updateCurrentOverDisplay();
@@ -140,7 +147,7 @@ document.getElementById("simulator").style.display = "none";// hideing the simul
 let ing = 1
  function lota(){
     if(ing===1){
-        if( totalBalls <300 && totalWickets <10 && target>totalScore){
+        if( totalBalls <(tov*6) && totalWickets <10 && target>totalScore){
              lets()
             }
         else {
@@ -155,13 +162,13 @@ let ing = 1
             }
     }
     else{
-        if( totalBalls <300 && totalWickets <10 && target>=totalScore){
+        if( totalBalls <(tov*6) && totalWickets <10 && target>=totalScore){
             lets()
             document.getElementById('target').textContent= (target+1)
            }
        else {
 
-            if ( totalWickets>=10 || totalBalls>=300){
+            if ( totalWickets>=10 || totalBalls>=(tovv*6)){
                 document.getElementById('inn').textContent=batfirst + ' won by ' +(target-totalScore) + " runs"
             }
             else{
@@ -175,13 +182,19 @@ let ing = 1
 
 
 
+ 
 function lets() {
+
+
+
+
 //    adv = 201 + awayTeam2
-    random = Math.floor(Math.random() * adv)
+    random =Math.floor(Math.random() * adv)
     console.log(random , adv)
     ov = Math.floor(totalBalls / 6)
     ovpw = 5
     console.log(ov)
+    
 //ing=2
     if(random>200 && batfirst == goodteam){
         parking =  (random - 200) % 5
@@ -196,6 +209,9 @@ function lets() {
                 if(random % 10 == 0 ){
                     addWicket()
                 }
+                else{
+                    addRun(0)
+                }
                }
                 break;
                 case 1:
@@ -204,12 +220,18 @@ function lets() {
 
                         addRun(1)
                     }
+                    else{
+                        addRun(0)
+                    }
                     break;
                     case 2:
                         addBall()
                         if(ing==1){
 
                             addRun(2)
+                        }
+                        else{
+                            addRun(0)
                         }
                         break;
                         case 3 :
@@ -218,12 +240,18 @@ function lets() {
 
                                 addRun(2)
                             }
+                            else{
+                                addRun(0)
+                            }
                             break;
                             case 4 :
                                 addBall()
                                 if (ing == 1){
 
                                     addRun(4)
+                                }
+                                else{
+                                    addRun(0)
                                 }
                                 break;
                             }
@@ -242,6 +270,9 @@ function lets() {
                 if(random % 10 == 0 ){
                     addWicket()
                 }
+                else{
+                    addRun(0)
+                }
                }
                 break;
                 case 1:
@@ -250,12 +281,18 @@ function lets() {
 
                         addRun(1)
                     }
+                    else{
+                        addRun(0)
+                    }
                     break;
                     case 2:
                         addBall()
                         if(ing!==1){
 
                             addRun(2)
+                        }
+                        else{
+                            addRun(0)
                         }
                         break;
                         case 3 :
@@ -264,12 +301,18 @@ function lets() {
 
                                 addRun(2)
                             }
+                            else{
+                                addRun(0)
+                            }
                             break;
                             case 4 :
                                 addBall()
                                 if (ing !== 1){
 
                                     addRun(4)
+                                }
+                                else{
+                                    addRun(0)
                                 }
                                 break;
                             }
@@ -304,7 +347,7 @@ function lets() {
                             }
                         }
                         //attack mode batting
-    else if((totalBalls>(tov*6/20)) && ((predict()<7)||(atkmode)) && ((isBetween(random,75,90) || isBetween(random,175,200) ))) {
+    else if((totalBalls>(tov*6/5)) && ((predict()[0]<7)||(atkmode)) && ((isBetween(random,75,90) || isBetween(random,175,200) ))) {
         console.log('we are attacking')
         if (isBetween(random,75,85) || isBetween(random,175,185)){
             addBall()
@@ -395,8 +438,7 @@ function lets() {
     rr = (totalScore/ovr).toFixed(2)
     document.getElementById('RunRate').textContent=rr
 
-
-    predict()
+predict()
     
 }
 
@@ -413,10 +455,12 @@ function auto(){
             console.log("Task running every 2 seconds");
             
             lota()
-            
         
+            if(totalBalls>=(tov*6)||totalWickets>=10||target<totalScore){
+                
+            }
             
-        }, 800);
+        }, 850);
     }
     
     function stopInterval() {
@@ -425,12 +469,10 @@ function auto(){
     
     startInterval()
 
-    if(totalBalls>=300||totalWickets>=10||target<totalScore){
-        stopInterval()
-    }
 }
 
-tovv = tov
+//tovv = tov
+
 
 function predict() {
     // let tov = document.getElementById("tov").value;
@@ -438,6 +480,7 @@ function predict() {
     // let ru = document.getElementById("ru").value;
     // let wi = document.getElementById("wi").value;
     // let rr = ru / ov;
+    rr = Number((totalScore/ovr).toFixed(2))
     let wr = totalWickets / ovr;
     let wr2 = ovr / totalWickets;
     let ewi = wr * tov
@@ -462,11 +505,11 @@ function predict() {
       eru = Math.ceil(rr * tovv + off)
     }
   
-    // console.log(eru, ewi);
+     console.log(eru, ewi ,off ,  tovv , wr , wr2 ,rr ,ovr);
     document.getElementById('prediction').textContent = Math.round(eru)+'/'+Math.floor(ewi);
 
     if (ing!==1){
-        rembal = 300 - totalBalls
+        rembal = tovv*6 - totalBalls
         remove = rembal/6
         remtar = target - totalScore
         rrr = remtar/remove
@@ -489,9 +532,64 @@ function predict() {
             panikmode = false
             atkmode = false
         }
-    }
-    return ewi
-    
-  }
 
+
+    }
+    //to get the expected runs
+            function averageRuns(totalOvers) {
+                if (totalOvers == 20) {
+                    return 160;
+                } else if (totalOvers == 40) {
+                    return 270;
+                } else if (totalOvers == 10) {
+                    return 90;
+                } else if (totalOvers > 10 && totalOvers < 20) {
+                    // Interpolate between 10 and 20 overs
+                    return 90 + ((160 - 90) / 10) * (totalOvers - 10);
+                } else if (totalOvers > 20 && totalOvers < 40) {
+                    // Interpolate between 20 and 40 overs
+                    return 160 + ((270 - 160) / 20) * (totalOvers - 20);
+                } else {
+                    return "Format not supported";
+                }
+            }
+            
+            //console.log(averageRuns(30)); // Estimated output: 215
+    
+            
+    
+    //to change the prediction bar
+            function increaseProgress() {
+                
+                    
+                
+                
+                let progressBar = document.getElementById('myProgress');
+                let newMax = Math.floor( averageRuns(tovv))
+                newMax  = 1.5 * newMax 
+                if(ing==1){
+                    newvalue= eru
+                }
+                else{
+                    if(totalBalls/6>tovv/5*4){
+                        
+                        maxmultiple = ((tovv*6-totalBalls)/(tovv*6))*2
+                    }
+                    else{
+                        maxmultiple = 1.5
+                    }
+                    newMax  = maxmultiple * eru
+                    newvalue = target
+                    console.log(progressBar.max,progressBar.value,maxmultiple)
+                    
+                }
+                progressBar.max = newMax; // Sets the new max value
+                progressBar.value = newvalue
+            }
+
+            increaseProgress()
+            
+            return [ewi, eru];
+
+}
 
