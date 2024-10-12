@@ -72,12 +72,12 @@ function addRun(runs) {
     }
     else if(runs===4){
         document.getElementById('lastBall').textContent = `FOUR!`;
-        document.getElementById('lastBall').style.color="purple"
+        document.getElementById('lastBall').style.color="green"
 
     }
     else if(runs===6){
         document.getElementById('lastBall').textContent = `SIX!!`;
-        document.getElementById('lastBall').style.color="purple"
+        document.getElementById('lastBall').style.color="green"
 
     }
     else{
@@ -94,7 +94,7 @@ function addExtras(runs) {
     totalScore += runs;
     document.getElementById('totalScore').textContent = totalScore;
     document.getElementById('lastBall').textContent = `${runs} run(s) scored`;
-    document.getElementById('lastBall').style.color="green"
+    document.getElementById('lastBall').style.color="purple"
     currentOver.push( runs+'wi');  // Add run to current over
    
     updateCurrentOverDisplay();
@@ -104,7 +104,7 @@ function addExtrasNb(runs) {
     totalScore += runs;
     document.getElementById('totalScore').textContent = totalScore;
     document.getElementById('lastBall').textContent = `${runs} run(s) scored`;
-    document.getElementById('lastBall').style.color="green"
+    document.getElementById('lastBall').style.color="purple"
     currentOver.push( runs+'NB');  // Add run to current over
     
     updateCurrentOverDisplay();
