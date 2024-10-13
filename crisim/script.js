@@ -94,7 +94,7 @@ function addExtras(runs) {
     totalScore += runs;
     document.getElementById('totalScore').textContent = totalScore;
     document.getElementById('lastBall').textContent = `${runs} run(s) scored`;
-    document.getElementById('lastBall').style.color="purple"
+    document.getElementById('lastBall').style.color="yellow"
     currentOver.push( runs+'wi');  // Add run to current over
    
     updateCurrentOverDisplay();
@@ -104,7 +104,7 @@ function addExtrasNb(runs) {
     totalScore += runs;
     document.getElementById('totalScore').textContent = totalScore;
     document.getElementById('lastBall').textContent = `${runs} run(s) scored`;
-    document.getElementById('lastBall').style.color="purple"
+    document.getElementById('lastBall').style.color="yellow"
     currentOver.push( runs+'NB');  // Add run to current over
     
     updateCurrentOverDisplay();
@@ -439,6 +439,8 @@ function lets() {
     document.getElementById('RunRate').textContent=rr
 
 predict()
+
+//console.log(predict()[0],predict()[1])
     
 }
 
@@ -471,7 +473,7 @@ function auto(){
 
 }
 
-//tovv = tov
+tovv2 = tovv
 
 
 function predict() {
@@ -485,31 +487,32 @@ function predict() {
     let wr2 = ovr / totalWickets;
     let ewi = wr * tov
     if (ewi >= 10) {
-      tovv = wr2 * 10;
+      tovv2 = wr2 * 10;
       ewi = 10
-      off = (tovv - ovr);
-      eru = rr * tovv + off
+      off = (tovv2 - ovr);
+      eru = rr * tovv2 + off
     }
      else {
   
   
-      ewi = Math.ceil(wr * tovv)
-      if (ovr > tovv/5){
+      ewi = Math.ceil(wr * tovv2)
+      if (ovr > tovv2/5){
        
     
-      of = (tovv - ovr) / 3;
+      of = (tovv2 - ovr) / 3;
       off = of * (10 - ewi);}
       else{
-      off = tovv - ovr;
+      off = tovv2 - ovr;
       }
-      eru = Math.ceil(rr * tovv + off)
+      eru = Math.ceil(rr * tovv2 + off)
     }
   
-     console.log(eru, ewi ,off ,  tovv , wr , wr2 ,rr ,ovr);
+     //console.log(eru, ewi ,off ,  tovv , wr , wr2 ,rr ,ovr);
     document.getElementById('prediction').textContent = Math.round(eru)+'/'+Math.floor(ewi);
 
     if (ing!==1){
         rembal = tovv*6 - totalBalls
+        console.log(tovv*6)
         remove = rembal/6
         remtar = target - totalScore
         rrr = remtar/remove
@@ -535,59 +538,6 @@ function predict() {
 
 
     }
-    //to get the expected runs
-            function averageRuns(totalOvers) {
-                if (totalOvers == 20) {
-                    return 160;
-                } else if (totalOvers == 40) {
-                    return 270;
-                } else if (totalOvers == 10) {
-                    return 90;
-                } else if (totalOvers > 10 && totalOvers < 20) {
-                    // Interpolate between 10 and 20 overs
-                    return 90 + ((160 - 90) / 10) * (totalOvers - 10);
-                } else if (totalOvers > 20 && totalOvers < 40) {
-                    // Interpolate between 20 and 40 overs
-                    return 160 + ((270 - 160) / 20) * (totalOvers - 20);
-                } else {
-                    return "Format not supported";
-                }
-            }
-            
-            //console.log(averageRuns(30)); // Estimated output: 215
-    
-            
-    
-    //to change the prediction bar
-            function increaseProgress() {
-                
-                    
-                
-                
-                let progressBar = document.getElementById('myProgress');
-                let newMax = Math.floor( averageRuns(tovv))
-                newMax  = 1.5 * newMax 
-                if(ing==1){
-                    newvalue= eru
-                }
-                else{
-                    if(totalBalls/6>tovv/5*4){
-                        
-                        maxmultiple = ((tovv*6-totalBalls)/(tovv*6))*2
-                    }
-                    else{
-                        maxmultiple = 1.5
-                    }
-                    newMax  = maxmultiple * eru
-                    newvalue = target
-                    console.log(progressBar.max,progressBar.value,maxmultiple)
-                    
-                }
-                progressBar.max = newMax; // Sets the new max value
-                progressBar.value = newvalue
-            }
-
-            increaseProgress()
             
             return [ewi, eru];
 
