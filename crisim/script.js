@@ -485,7 +485,7 @@ function predict() {
     rr = Number((totalScore/ovr).toFixed(2))
     let wr = totalWickets / ovr;
     let wr2 = ovr / totalWickets;
-    let ewi = wr * tov
+    let ewi = wr * tovv2
     if (ewi >= 10) {
       tovv2 = wr2 * 10;
       ewi = 10
