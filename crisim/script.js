@@ -482,7 +482,7 @@ function predict() {
     // let ru = document.getElementById("ru").value;
     // let wi = document.getElementById("wi").value;
     // let rr = ru / ov;
-    rr = Number((totalScore/ovr).toFixed(2))
+    let rr = Number((totalScore/ovr).toFixed(2))
     let wr = totalWickets / ovr;
     let wr2 = ovr / totalWickets;
     let ewi = wr * tovv
@@ -500,7 +500,8 @@ function predict() {
        
     
       of = (tovv2 - ovr) / 3;
-      off = of * (10 - ewi);}
+      off = of * (10 - ewi);
+      }
       else{
       off = tovv2 - ovr;
       }
