@@ -495,17 +495,17 @@ function predict() {
      else {
   
   
-      ewi = Math.ceil(wr * tovv2)
+      ewi = Math.ceil(wr * tovv)
       if (ovr > tovv/5){
        
     
-      of = (tovv2 - ovr) / 3;
+      of = (tovv - ovr) / 3;
       off = of * (10 - ewi);
       }
       else{
-      off = tovv2 - ovr;
+      off = tovv - ovr;
       }
-      eru = Math.ceil(rr * tovv2 + off)
+      eru = Math.ceil(rr * tovv + off)
     }
   
      //console.log(eru, ewi ,off ,  tovv , wr , wr2 ,rr ,ovr);
