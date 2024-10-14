@@ -496,7 +496,7 @@ function predict() {
   
   
       ewi = Math.ceil(wr * tovv2)
-      if (ovr > tovv2/5){
+      if (ovr > tovv/5){
        
     
       of = (tovv2 - ovr) / 3;
