@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3b2e00; 
+  }
+  
+  .container {
+    background-color: #f6e28e; /* Soft yellow for the container */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 450px;
+    max-width: 90%;
+  }
+  
+  h1 {
+    font-size: 32px;
+    color: #4e4e4e;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  
+  label {
+    font-size: 16px;
+    color: #4e4e4e;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  input {
+    font-size: 18px;
+    padding: 20px;
+    margin: 15px;
+    width: 140px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  input:focus {
+    border-color: #f7b600; /* Yellow focus border */
+  }
+  
+  #timerDisplay {
+    font-size: 108px;
+    margin: 20px 0;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .controls button {
+    font-size: 18px;
+    padding: 22px 35px;
+    margin: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  #startBtn {
+    background-color: #f7b600; /* Yellow button */
+    color: white;
+  }
+  
+  #resetBtn {
+    background-color: #f9b3b3; /* Soft red for reset */
+    color: white;
+  }
+  
+  .controls button:hover {
+    transform: scale(1.05);
+  }
+  
+  .controls button:active {
+    transform: scale(0.98);
+  }
+  
+  .controls button:focus {
+    outline: none;
+  }
+  
+  footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #8a8a8a;
+  }
+  

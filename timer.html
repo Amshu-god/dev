@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Timer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="preview.jpg">
+</head>
+<body>
+  <div class="container">
+    <h1><span id="state">Study</span> Timer</h1>
+    
+    <input type="number" id="studyHours" placeholder="Hours" min="0" value="0" />
+    <input type="number" id="studyMinutes" placeholder="Minutes" min="0" value="0" />
+    <div id="timerDisplay">00:00</div>
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+  </div>
+
+  <audio id="studyStartSound" src="mixkit-alarm-clock-beep-988.wav"></audio>
+  <audio id="breakStartSound" src="mixkit-alarm-digital-clock-beep-989.wav"></audio>
+  <audio id="studyEndSound" src="mixkit-digital-clock-digital-alarm-buzzer-992.wav"></audio>
+
+  <video id="stayAwake" autoplay loop muted playsinline style="display:none;">
+    <source src="0220.mp4" type="video/mp4">
+</video>
+
+  <script src="script.js"></script>
+</body>
+</html>
