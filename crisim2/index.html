@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Scoring App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cricket Scoring App</h1>
+        
+        <!-- Team Upload Section -->
+        <div class="team-upload" id="teamupload">
+            <h2>Upload Teams</h2>
+            <div>
+                <label for="team1File">Team 1 File: </label>
+                <input type="file" id="team1File">
+            </div>
+            <div>
+                <label for="team2File">Team 2 File: </label>
+                <input type="file" id="team2File">
+            </div>
+            <button id="loadTeams">Load Teams</button>
+        </div>
+
+        <!-- Overs Section -->
+        <div class="overs-section hidden" id="overselection">
+            <h2>Set Overs</h2>
+            <label for="oversInput">Number of Overs: </label>
+            <input type="number" id="oversInput" min="1">
+            <button id="startMatch">Start Match</button>
+        </div>
+
+        <!-- Scoring Section -->
+        <div class="scoring-section hidden">
+            <div class="disp1">
+            <h2 id="vurses">Match Progress</h2>
+            <h3>Scoreboard</h3>
+            <div class="score-display">
+                <p><strong>Score:</strong> <span id="teamScore" >0</span>/<span id="teamWickets">0</span></p>
+                <p><strong>Overs:</strong> <span id="oversBowled">0.0</span></p>
+                <p><strong>CRR:</strong> <span id="crr">0.0</span></p>
+                <p><strong>RRR:</strong> <span id="rrr">0.0</span></p>
+                <p id="target" class="hidden"></p>
+            </div>
+            <div class="matchinfo">
+                <p id="ending"></p>
+            </div>
+            <p id="overstat">
+
+            </p>
+            <style>
+                .score-display {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+            
+                .score-display p {
+                    width: 50%;
+                }
+            </style>
+            </div>
+            <div class="player-info">
+                <h3>Players</h3>
+                <p class="player-row">
+                    <strong>Striker:    </strong>
+                    <span id="striker"></span>
+                    <span id="strikerstats"></span>
+                </p>
+                <p class="player-row">
+                    <strong>Non-Striker:</strong>
+                    <span id="nonStriker"></span>
+                    <span id="nonstrikerstats"></span>
+                </p>
+                <p class="player-row">
+                    <strong>Bowler:     </strong>
+                    <span id="bowler"></span>
+                    <span id="bowlerstats"></span>
+                </p>
+            </div>
+            
+            <style>
+                .player-row {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+                    gap: 10px; /* Space between items */
+                    text-align: center; /* Center-align text */
+                }
+            
+                .player-row strong {
+                    grid-column: span 3; /* Make the heading span all 3 columns */
+                    text-align: left; /* Align the heading to the left */
+                }
+            
+                .player-row span {
+                    padding: 5px;
+                    background-color: #0f4979; /* Optional: Add background color for clarity */
+                    border: 1px solid #ccc; /* Optional: Add borders for better visibility */
+                    border-radius: 5px; /* Optional: Add rounded corners */
+                }
+            </style>
+            
+            
+            
+            <!-- Scoring Buttons -->
+            <div class="buttons">
+                <h3>Actions</h3>
+                <!-- <button onclick="scoreRun(1)">1 Run</button>
+                <button onclick="scoreRun(2)">2 Runs</button>
+                <button onclick="scoreRun(4)">4 Runs</button>
+                <button onclick="scoreRun(6)">6 Runs</button>
+                <button onclick="recordDotBall()">Dot Ball</button>
+                <button onclick="recordWicket()">Wicket</button> -->
+                
+                <button id="startButton">Start</button>
+                <button id="stopButton">Stop</button>
+
+                <button onclick="generaterandomscore()">next</button>
+                <button id="endOver">End Over</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
